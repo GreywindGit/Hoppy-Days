@@ -40,13 +40,3 @@ func move():
 
 func animate():
 	emit_signal("animate", motion)
-#	if motion.y < 0:
-#		$AnimatedSprite.play("jump")
-#	elif motion.x > 0:
-#		$AnimatedSprite.set_flip_h(false)
-#		$AnimatedSprite.play("walk")
-#	elif motion.x < 0:
-#		$AnimatedSprite.set_flip_h(true)
-#		$AnimatedSprite.play("walk")
-#	else:
-#		$AnimatedSprite.play("idle")
