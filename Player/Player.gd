@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 var motion = Vector2(0, 0)
+var lives = 3
 
 const SPEED = 1000
 const GRAVITY = 300
@@ -21,7 +22,7 @@ func _physics_process(delta):
 func apply_gravity():
 	if position.y > WORLD_LIMIT:
 		end_game()
-	if is_on_floor():
+	elif is_on_floor():
 		motion.y = 0
 	elif is_on_ceiling():
 		motion.y = 1
@@ -45,6 +46,15 @@ func move():
 
 func animate():
 	emit_signal("animate", motion)
+	
+
+func hurt():
+	position.y -= 1
+	yield(get_tree(), "idle_frame")
+	motion.y -= JUMP_SPEED
+	lives -= 1
+	if lives < 0:
+		end_game()
 
 
 func end_game():
