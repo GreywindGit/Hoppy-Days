@@ -17,9 +17,6 @@ height = 80.8042
 position = Vector2( 189.576, 272.371 )
 collision_mask = 14
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="PlayerAnimation" parent="." instance=ExtResource( 2 )]
 
@@ -27,6 +24,7 @@ __meta__ = {
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+editor/display_folded = true
 position = Vector2( 700, 0 )
 current = true
 zoom = Vector2( 2, 2 )
@@ -74,9 +72,9 @@ texture = ExtResource( 6 )
 
 [node name="JumpSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
-volume_db = -5.0
+volume_db = -15.0
 
 [node name="PainSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
-volume_db = -5.0
+volume_db = -15.0
 [connection signal="animate" from="." to="PlayerAnimation" method="_on_Player_animate"]
